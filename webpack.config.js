@@ -17,7 +17,13 @@ module.exports = {
   cache: true,
   debug: true,
   devtool: false,
-  entry: './src/scripts/components/<%= pkg.mainInput %>.jsx',
+  
+  context: __dirname + '/src/scripts',
+  resolve: {
+    root: __dirname + '/src',
+    modulesDirectories: ['scripts', 'styles', 'node_modules']
+  },
+  entry: './components/<%= pkg.mainInput %>.jsx',
 
   stats: {
     colors: true,

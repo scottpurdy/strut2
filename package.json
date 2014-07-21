@@ -1,10 +1,10 @@
 {
-  "name": "redditusertrack",
+  "name": "strut2",
   "version": "0.0.0",
   "src": "src",
   "test": "test",
   "dist": "dist",
-  "mainInput": "RedditUserTrackApp",
+  "mainInput": "App",
   "mainOutput": "main",
   "dependencies": {
     "react": "~0.10.0",
