@@ -1,6 +1,6 @@
 'use strict';
 
-var EventEmitter = require('events/EventEmitter');
+var EventEmitter = require('events/Events');
 var _ = require('lodash');
 
 var identity = function(p) {return p;};

@@ -4,20 +4,21 @@
 'use strict';
 
 var React = require('react/addons');
+var EventBus = require('events/EventBus');
 
 var DropdownButton = React.createClass({
 	getInitialState: function() {
 		return {
 			dropped: false
-		}
+		};
 	},
 
 	componentDidMount: function() {
-		document.addEventListener('click', this.onDocClick, false);
+		EventBus.on('react.root.event.onClick', this.onDocClick);
 	},
 
 	componentWillUnmount: function() {
-		document.removeEventListener('click', this.onDocClick, false);
+		EventBus.off(null, null, this);
 	},
 
 	render: function() {
@@ -46,7 +47,6 @@ var DropdownButton = React.createClass({
 	},
 
 	onDocClick: function() {
-		console.log('d');
 		if (this.state.dropped) {
 			this.setState({
 				dropped: false

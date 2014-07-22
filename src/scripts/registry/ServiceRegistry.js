@@ -1,6 +1,6 @@
 'use strict';
 
-var EventEmitter = require('events/EventEmitter');
+var EventEmitter = require('events/Events');
 var MultiMap = require('collections/MultiMap');
 var _ = require('lodash');
 
@@ -14,7 +14,7 @@ function ServiceRegistry() {
 	this._services = new MultiMap();
 }
 
-var proto = ServiceRegistry.prototype = Object.create(EventEmitter.prototype);
+var proto = ServiceRegistry.prototype = Object.create(EventEmitter);
 
 proto.register = function(opts, service) {
 	if (service.__registryIdentifier == null)

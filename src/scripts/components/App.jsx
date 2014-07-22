@@ -38,6 +38,8 @@ var App = React.createClass({
 	}
 });
 
-React.renderComponent(<App />, document.getElementById('content')); // jshint ignore:line
+var Root = require('widgets/Root.jsx');
+
+React.renderComponent(<Root><App /></Root>, document.getElementById('content')); // jshint ignore:line
 
 module.exports = App;
