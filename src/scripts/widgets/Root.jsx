@@ -5,7 +5,7 @@
 
 var React = require('react/addons');
 var EventBus = require('events/EventBus');
-require('styles/widgets/main.css');
+require('widgets/main.css');
 
 var Root = React.createClass({
 	onClick: function(e) {

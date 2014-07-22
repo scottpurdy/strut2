@@ -9,9 +9,6 @@ var MenuSection = React.createClass({
 	render: function() {
 		return (
 			<ul>
-				<li>
-					Werd
-				</li>
 			</ul>
 		);
 	}

@@ -19,5 +19,18 @@ var Header = React.createClass({
 	}
 });
 
+Header.Brand = React.createClass({
+	render: function() {
+		return (
+			<div className="navbar-header">
+				<a
+					href={this.props.href}
+					className="navbar-brand">
+					{this.props.children}
+				</a>
+			</div>
+		);
+	}
+});
 
 module.exports = Header;

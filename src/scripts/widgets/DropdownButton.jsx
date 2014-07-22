@@ -29,7 +29,7 @@ var DropdownButton = React.createClass({
 			var open = '';
 		}
 
-		return (
+		return this.transferPropsTo(
 			<div className={"btn-group" + open} onClick={this.onClick}>
 				{this.props.children[0]}
 				{menu}

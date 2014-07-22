@@ -1,0 +1,25 @@
+.cmp-logo-button {
+	margin-top: 5px;
+	position: relative;
+}
+
+.cmp-logo-button .bg {
+	width: 100px;
+	height: 32px;
+	display: inline-block;
+	background: url('../../images/logos/strut-logo-32.png');
+}
+
+.cmp-logo-button .caret {
+	position: absolute;
+	right: 6px;
+	top: 17px;
+}
+
+.cmp-logo-button > button {
+	padding: 0px;
+	padding-left: 8px;
+	padding-right: 20px;
+	padding-top: 3px;
+	height: 40px;
+}
