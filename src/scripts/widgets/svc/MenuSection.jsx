@@ -14,8 +14,16 @@ var MenuSection = React.createClass({
 	},
 
 	render: function() {
+		var children = this._tracker.map(function(se) {
+			return (
+				<li key={se.service.__registryIdentifier}>
+					<a href="#!">{se.meta.label}</a>
+				</li>
+			);
+		});
 		return (
 			<ul>
+				{children}
 			</ul>
 		);
 	}

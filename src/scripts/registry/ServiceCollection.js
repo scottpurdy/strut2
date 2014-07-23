@@ -18,7 +18,7 @@ function ServiceCollection(registry, lookup, converter) {
 }
 
 ServiceCollection.toServiceConverter = function(entry) {
-	return entry.service();
+	return entry.service;
 }
 
 var proto = ServiceCollection.prototype = Object.create(Array.prototype);
@@ -63,6 +63,7 @@ proto._populateItems = function() {
 };
 
 proto._handleAddition = function(item, entry) {
+	console.log('Adding...');
 	this._idToItem[entry.serviceIdentifier()] = item;
 	if (Array.isArray(item)) {
 		item.forEach(function(i) {

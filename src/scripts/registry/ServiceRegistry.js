@@ -85,7 +85,7 @@ proto._deregister = function(opts) {
 proto.getBest = function(opts) {
 	var entry = this.getBestEntry(opts);
 	if (entry != null)
-		return entry.service();
+		return entry.service;
 	return null;
 };
 
@@ -148,7 +148,7 @@ proto.getInvoke = function(srvcOpts, methName, args) {
 
 	var items = {};
 	services.forEach(function(entry) {
-		var srvc = entry.service();
+		var srvc = entry.service;
 		var item = srvc[methName].apply(srvc, args);
 		items[item.id] = item;
 	}, this);
@@ -158,21 +158,13 @@ proto.getInvoke = function(srvcOpts, methName, args) {
 
 function ServiceEntry(interfaces, meta, service) {
 	this._interfaces = interfaces;
-	this._meta = meta || {};
-	this._service = service;
+	this.meta = meta || {};
+	this.service = service;
 }
 
 ServiceEntry.prototype = {
 	equals: function(other) {
-		return other._service.__registryIdentifier == this._service.__registryIdentifier;
-	},
-
-	service: function() {
-		return this._service;
-	},
-
-	meta: function() {
-		return this._meta;
+		return other.service.__registryIdentifier == this.service.__registryIdentifier;
 	},
 
 	matches: function(opts) {
@@ -192,7 +184,7 @@ ServiceEntry.prototype = {
 		if (meta == null) return true;
 
 		for (var key in meta) {
-			if (!_.isEqual(meta[key], this._meta[key]))
+			if (!_.isEqual(meta[key], this.meta[key]))
 				return false;
 		}
 
@@ -200,7 +192,7 @@ ServiceEntry.prototype = {
 	},
 
 	serviceIdentifier: function() {
-		return this._service.__registryIdentifier;
+		return this.service.__registryIdentifier;
 	}
 };
 

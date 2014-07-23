@@ -15,7 +15,7 @@ var LogoButton = React.createClass({
 	render: function() {
 		return this.transferPropsTo(
 			<DropdownButton className="cmp-logo-button">
-				<Button className="btn-default">
+				<Button className="btn-default dropdown-toggle">
 					<span className="bg"></span>
 					<span className="caret"></span>
 				</Button>

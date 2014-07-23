@@ -16,7 +16,7 @@ module.exports = {
 
 	componentWillUnmount: function() {
 		window.log.debug('TrackerMixin unmounted');
-		
+
 		this._tracker.dispose();
 	},
 };
