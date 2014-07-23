@@ -6,10 +6,7 @@ var _ = require('lodash');
 var identity = function(p) {return p;};
 
 function ServiceCollection(registry, lookup, converter) {
-	var t = new EventEmitter();
-	for (var i in t) {
-		this[i] = t[i];
-	}
+	_.extend(this, EventEmitter);
 	
 	this._idToItem = {};
 	this._lookup = registry.normalize(lookup);
@@ -46,7 +43,7 @@ proto._handleRemoval = function(entry) {
 	item.forEach(function(item) {
 		var i = this.indexOf(item);
 		this.splice(i, 1);
-		this.emit('deregistered', item, entry, i);
+		this.trigger('change deregistered', item, entry, i);
 	}, this);
 };
 
@@ -70,16 +67,17 @@ proto._handleAddition = function(item, entry) {
 	if (Array.isArray(item)) {
 		item.forEach(function(i) {
 			this.push(i);
-			this.emit('registered', item, entry, i);
+			this.trigger('change registered', item, entry, i);
 		}, this);
 	} else {
 		this.push(item);
-		this.emit('registered', item, entry, this.length - 1);
+		this.trigger('change registered', item, entry, this.length - 1);
 	}
 }
 
 proto.dispose = function() {
 	this._registry.off(null, null, this);
+	this.off();
 };
 
 module.exports = ServiceCollection;

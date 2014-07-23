@@ -22,8 +22,8 @@ var DropdownButton = React.createClass({
 	},
 
 	render: function() {
+		var menu = this.props.children[1];
 		if (this.state.dropped) {
-			var menu = this.props.children[1];
 			var open = ' open';
 		} else {
 			var open = '';

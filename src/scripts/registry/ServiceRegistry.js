@@ -35,9 +35,9 @@ proto.register = function(opts, service) {
 
 	interfaces.forEach(function(iface) {
 		this._services.put(iface, entry);
-		this.emit('registered:' + iface, entry);
+		this.trigger('registered:' + iface, entry);
 	}, this);
-	this.emit('registered', entry);
+	this.trigger('registered', entry);
 
 	return this;
 };
@@ -50,7 +50,7 @@ proto.deregister = function(opts) {
 };
 
 proto.on = function(topic, callback, context) {
-	var result = EventEmitter.prototype.on.apply(this, arguments);
+	var result = EventEmitter.on.apply(this, arguments);
 	var parts = topic.split(':');
 	if (parts[0] == 'registered') {
 		if (parts.length == 1) {
@@ -58,7 +58,7 @@ proto.on = function(topic, callback, context) {
 		} else {
 			this._services.get(parts[1])
 			.forEach(function(entry) {
-				this.emit('registered:' + parts[1], entry);
+				this.trigger('registered:' + parts[1], entry);
 			}, this);
 		}
 	}
@@ -78,7 +78,7 @@ proto._deregister = function(opts) {
 	}, this);
 
 	removed.forEach(function(entry) {
-		this.emit('deregistered', entry);
+		this.trigger('deregistered', entry);
 	}, this);
 };
 

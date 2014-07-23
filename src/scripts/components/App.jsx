@@ -3,15 +3,19 @@
  */
 'use strict';
 
+window.log = require('logger/Log');
+window.log.config = {
+	debug: true
+};
+
+require('components/Features');
+
 var React = require('react/addons');
 var ReactTransitionGroup = React.addons.TransitionGroup;
 var _ = require('lodash');
 
 require('bootstrap.css');
 require('main.css');
-
-var ServiceRegistry = require('registry/ServiceRegistry');
-window.serviceRegistry = new ServiceRegistry();
 
 var SlideEditor = require('components/editor/Slide.jsx');
 var TransitionEditor = require('components/editor/Transition.jsx');
