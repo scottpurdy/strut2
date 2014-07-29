@@ -16,6 +16,7 @@ var EditorSlide = React.createClass({
 			<div>
 				<Header>
 					<LogoButton />
+					
 				</Header>
 				<div className="container-fluid">
 					<SlideWell />
