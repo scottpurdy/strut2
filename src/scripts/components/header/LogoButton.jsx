@@ -9,12 +9,12 @@ var DropdownButton = require('widgets/DropdownButton.jsx');
 var Options = DropdownButton.Options;
 var MenuSection = require('widgets/svc/MenuSection.jsx');
 
-require('components/header.css');
+require('components/Header.css');
 
 var LogoButton = React.createClass({
 	render: function() {
 		return this.transferPropsTo(
-			<DropdownButton className="cmp-logo-button">
+			<DropdownButton className="strt-logo-button">
 				<Button className="btn-default dropdown-toggle">
 					<span className="bg"></span>
 					<span className="caret"></span>

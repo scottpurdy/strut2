@@ -6,10 +6,10 @@ module.exports = function (config) {
     frameworks: ['jasmine'],
     files: [
       'test/helpers/**/*.js',
-      'test/spec/components/**/*.js'
+      'test/spec/**/*.js'
     ],
     preprocessors: {
-      'test/spec/components/**/*.js': ['webpack']
+      'test/spec/**/*.js': ['webpack']
     },
     webpack: {
       cache: true,

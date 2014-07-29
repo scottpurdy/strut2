@@ -1,0 +1,10 @@
+.strt-slide-well {
+	width: 159px;
+/* background: white; */
+/* border-right: 2px groove #333; */
+	position: absolute;
+	left: 0px;
+	top: 50px;
+	bottom: 0px;
+	z-index: 1;
+}

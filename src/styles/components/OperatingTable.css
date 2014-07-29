@@ -1,0 +1,13 @@
+.strt-operating-table {
+	position: absolute;
+	left: 160px;
+	z-index: 2;
+	top: 50px;
+	bottom: 0px;
+	right: 0px;
+
+	background: #fff;
+	border-left: 1px solid #dae3e9;
+	border-bottom: 1px solid #dae3e9;
+	box-shadow: -3px 3px 3px -2px #f1f1f3;
+}

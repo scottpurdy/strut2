@@ -1,14 +1,31 @@
 'use strict';
 
+var Css = require('hmtml/Css');
 var Events = require('events/Events');
 
 function BaseComponent(node) {
 	this.content = node.innerHTML;
 
-	this.style = node.style.cssText;
+	this.style = Css.textToObject(node.style.cssText);
 	this.classes = node.className.split(' ');
 }
 
-BaseComponent.prototype = Object.create(Events);
+BaseComponent.prototype = {
+	addClass: function(class) {
+
+	},
+
+	updateStyle: function() {
+
+	},
+
+	replaceStyle: function() {
+
+	},
+
+	replaceContent: function() {
+		
+	}
+};
 
 return BaseComponent;

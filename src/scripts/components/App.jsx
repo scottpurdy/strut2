@@ -17,18 +17,14 @@ var _ = require('lodash');
 require('bootstrap.css');
 require('main.css');
 
-var SlideEditor = require('components/editor/Slide.jsx');
-var TransitionEditor = require('components/editor/Transition.jsx');
-
 var subViews = {
-	'editor.slide': SlideEditor,
-	'editor.transition': TransitionEditor
+	editor: require('components/editor/Editor.jsx')
 };
 
 var App = React.createClass({
 	getInitialState: function() {
 		return {
-			view: 'editor.slide'
+			view: 'editor'
 		};
 	},
 

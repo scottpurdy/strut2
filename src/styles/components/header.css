@@ -1,25 +1,32 @@
-.cmp-logo-button {
+.strt-logo-button {
 	margin-top: 5px;
 	position: relative;
 }
 
-.cmp-logo-button .bg {
+.strt-logo-button .bg {
 	width: 100px;
 	height: 32px;
 	display: inline-block;
 	background: url('../../images/logos/strut-logo-32.png');
 }
 
-.cmp-logo-button .caret {
+.strt-logo-button .caret {
 	position: absolute;
 	right: 6px;
 	top: 17px;
 }
 
-.cmp-logo-button > button {
+.strt-logo-button > button {
 	padding: 0px;
 	padding-left: 8px;
 	padding-right: 20px;
 	padding-top: 3px;
 	height: 40px;
+}
+
+.navbar-default {
+	background: #fdfdfd;
+	/*background: linear-gradient(to bottom, #2c3742 0%,#28303a 100%);*/
+	box-shadow: -1px 0px 5px 2px #f9f9f9;
+	border-bottom: 1px solid #efeef3;
 }

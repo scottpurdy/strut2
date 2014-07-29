@@ -5,10 +5,12 @@
 
 var React = require('react/addons');
 
+require('components/SlideWell.css')
+
 var SlideWell = React.createClass({
 	render: function() {
-		return (
-			<div>
+		return this.transferPropsTo(
+			<div className="strt-slide-well">
 			</div>
 		);
 	}
