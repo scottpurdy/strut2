@@ -22,14 +22,26 @@ var Events = require('events/Events');
 var Slide = require('./Slide');
 var _ = require('lodash');
 
-function Deck(rawString) {
-	if (rawString) {
+var defaultConfig = {
+	slideWidth: 900,
+	slideHeight: 700
+}
+
+function Deck(rawDeck) {
+	if (rawDeck) {
+		var rawString = rawDeck.presentation;
 		var dummyEl = document.createElement('div');
 		dummyEl.innerHTML = rawString;
 		var root = dummyEl.children[0];
 
 		this._slides = _.map(root.children, Slide.create);
+		this.config = rawDeck.config;
+	} else {
+		this._slides = [];
+		this.config = _.extend({}, defaultConfig);
 	}
 }
 
 var proto = Deck.prototype = Object.create(Events);
+
+module.exports = Deck;

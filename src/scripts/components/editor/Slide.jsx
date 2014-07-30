@@ -19,8 +19,8 @@ var EditorSlide = React.createClass({
 					
 				</Header>
 				<div className="container-fluid">
-					<SlideWell />
-					<OperatingTable />
+					<SlideWell deck={this.props.deck} />
+					<OperatingTable deck={this.props.deck} />
 				</div>
 			</div>
 		);

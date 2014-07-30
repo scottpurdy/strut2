@@ -4,6 +4,10 @@
 	padding: 0;
 }
 
-body {
-	background-color: #f7f7f7;
+body.strt-theme-light {
+	background-color: #f1f2f3;
+}
+
+body.strt-theme-dark {
+	background-color: #eee;
 }
