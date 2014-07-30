@@ -41,3 +41,8 @@
 	background: #34323a;
 	border: none;
 }
+
+.strt-header-component-area {
+	display: inline-block;
+	margin-left: 50px;
+}

@@ -7,7 +7,7 @@ var React = require('react/addons');
 var SvcTrackerMixin = require('components/svc/TrackerMixin');
 
 var ButtonGroup = React.createClass({
-	mixins: [],
+	mixins: [SvcTrackerMixin],
 
 	getSvcLookup: function() {
 		return this.props.interface;
@@ -21,15 +21,16 @@ var ButtonGroup = React.createClass({
 					className={"btn " + this.props.btnClassName}>
 					<span className={"glyphicon " + se.meta.icon}>
 					</span>
-					<span className="btn-label">
+					<div className="btn-label">
 						{se.meta.label}
-					</span>
+					</div>
 				</button>
 			);
-		});
+		}, this);
 
 		return this.transferPropsTo(
 			<div className="btn-group">
+				{children}
 			</div>
 		);
 	}

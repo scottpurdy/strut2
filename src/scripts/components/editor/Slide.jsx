@@ -9,6 +9,7 @@ var Brand = Header.Brand;
 var LogoButton = require('components/header/LogoButton.jsx');
 var SlideWell = require('components/editor/well/SlideWell.jsx');
 var OperatingTable = require('components/editor/OperatingTable.jsx');
+var ComponentButtonArea = require('components/header/ComponentArea.jsx');
 
 var EditorSlide = React.createClass({
 	render: function() {
@@ -16,7 +17,7 @@ var EditorSlide = React.createClass({
 			<div>
 				<Header>
 					<LogoButton />
-					
+					<ComponentButtonArea />
 				</Header>
 				<div className="container-fluid">
 					<SlideWell deck={this.props.deck} />
