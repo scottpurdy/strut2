@@ -8,9 +8,9 @@ module.exports = {
 
     loaders: [{
       test: /\.css$/,
-      loader: 'style-loader!css-loader'
+      loader: 'style!css'
     }, {
-      test: /\.gif/,
+      test: /\.gif$/,
       loader: 'url-loader?limit=10000&mimetype=image/gif'
     }, {
       test: /\.jpg$/,

@@ -13,19 +13,18 @@ var common = require('./webpack.common.config');
 module.exports = {
   output: {
     publicPatch: 'dist/',
-    path: 'dist/scripts/',
+    path: 'dist/',
     filename: 'main.js'
   },
 
   debug: false,
   devtool: false,
   
-  context: __dirname + '/src/scripts',
   resolve: {
-    root: __dirname + '/src/scripts',
+    root: __dirname + '/src',
     modulesDirectories: ['scripts', 'styles', 'node_modules']
   },
-  entry: './components/<%= pkg.mainInput %>.jsx',
+  entry: './src/scripts/components/<%= pkg.mainInput %>.jsx',
 
   stats: {
     colors: true,
