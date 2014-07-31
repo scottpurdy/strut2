@@ -46,3 +46,13 @@
 	display: inline-block;
 	margin-left: 50px;
 }
+
+.strt-header-component-area .btn {
+	font-size: 13px;
+	padding: 4px 12px;
+	margin-top: 5px;
+}
+
+.navbar {
+	height: 57px;
+}
