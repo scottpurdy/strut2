@@ -18,9 +18,9 @@ The raw format of a deck:
 </div>
 */
 
-var Events = require('events/Events');
 var Slide = require('./Slide');
 var _ = require('lodash');
+var rx = require('rx');
 
 var defaultConfig = {
 	slideWidth: 900,
@@ -34,14 +34,18 @@ function Deck(rawDeck) {
 		dummyEl.innerHTML = rawString;
 		var root = dummyEl.children[0];
 
-		this._slides = _.map(root.children, Slide.create);
+		this.slides = _.map(root.children, Slide.create);
 		this.config = rawDeck.config;
 	} else {
-		this._slides = [];
+		this.slides = [];
 		this.config = _.extend({}, defaultConfig);
 	}
 }
 
-var proto = Deck.prototype = Object.create(Events);
+Deck.prototype = {
+	__getArray: function() {
+		return this.slides;
+	}
+};
 
 module.exports = Deck;

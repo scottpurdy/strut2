@@ -26,5 +26,15 @@ module.exports = {
     { test: /\.ttf$/,    loader: "file-loader" },
     { test: /\.eot$/,    loader: "file-loader" },
     { test: /\.svg$/,    loader: "file-loader" }]
-  }
+  },
+
+  resolve: {
+    alias: {
+      'rx': 'rx/dist/rx.lite'
+    },
+    root: __dirname + '/src',
+    modulesDirectories: ['scripts', 'styles', 'node_modules']
+  },
+
+  entry: './src/scripts/components/<%= pkg.mainInput %>.jsx'
 };

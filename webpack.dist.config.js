@@ -20,11 +20,8 @@ module.exports = {
   debug: false,
   devtool: false,
   
-  resolve: {
-    root: __dirname + '/src',
-    modulesDirectories: ['scripts', 'styles', 'node_modules']
-  },
-  entry: './src/scripts/components/<%= pkg.mainInput %>.jsx',
+  resolve: common.resolve,
+  entry: common.entry,
 
   stats: {
     colors: true,
