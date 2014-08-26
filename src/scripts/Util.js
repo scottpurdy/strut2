@@ -1,5 +1,19 @@
 'use strict';
 
+function getProp(prop, obj) {
+	return obj[prop];
+}
+
+function curry1_1(fn, x) {
+	return function(y) {
+		return fn(x, y);
+	}
+}
+
+function makePropTest(prop) {
+	return curry1_1(getProp, prop);
+}
+
 var self = {
 	mapFromString: function(firstSplitter, secondSplitter, str) {
 		var map = {};
@@ -44,11 +58,44 @@ var self = {
 		return obj;
 	},
 
-	curry1_1: function(fn, x) {
-		return function(y) {
-			return fn(x, y);
+	map2: function(f, a1, a2) {
+		var l = Math.min(a1.length, a2.length);
+
+		var r = [];
+		for (var i = 0; i < l; ++i) {
+			r.push(f(a1[i], a2[i], i, a1, a2));
 		}
-	}
+
+		return r;
+	},
+
+	invariant: function(condition, message) {
+		if (!condition) {
+			throw new Error(message);
+		}
+	},
+
+	allDefined: function() {
+		for (var i = 0; i < arguments.length; ++i) {
+			if (arguments[i] === undefined) return false;
+		}
+
+		return true;
+	},
+
+	noneDefined: function() {
+		for (var i = 0; i < arguments.length; ++i) {
+			if (arguments[i] !== undefined) return false;
+		}
+
+		return true;
+	},
+
+	curry1_1: curry1_1,
+
+	getProp: getProp,
+	makePropTest: makePropTest,
+	isSelected: makePropTest('isSelected')
 };
 
 module.exports = self;

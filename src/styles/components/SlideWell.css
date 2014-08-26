@@ -2,11 +2,21 @@
 	width: 159px;
 	position: absolute;
 	left: 0px;
-	top: 50px;
+	top: 57px;
+	padding-top: 10px;
 	bottom: 0px;
 	z-index: 1;
 }
 
 .strt-theme-dark .strt-slide-well {
 	background: #34323a;
+}
+
+.strt-well-slide {
+	box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+	width: 140px;
+	height: 100px;
+	background: white;
+	margin: 0 auto;
+	border: 1px solid rgba(0, 0, 0, 0.3);
 }
