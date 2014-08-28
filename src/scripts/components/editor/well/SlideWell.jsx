@@ -9,12 +9,13 @@ var Slide = require('./Slide.jsx');
 require('components/SlideWell.css')
 
 var SlideWell = React.createClass({
-	renderSlide: function(slide) {
-		console.log('Rendering slide');
+	renderSlide: function(slide, index) {
 		return (
 			<Slide
 				model={slide}
 				key={slide.id}
+				index={index}
+				onClick={this.props.onSlideClicked}
 			/>
 		);
 	},

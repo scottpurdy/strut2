@@ -26,6 +26,10 @@ Deck.prototype = {
 		this.slides[i].selected = selected;
 	},
 
+	toggleSelectedSlide: function(i) {
+		this.slides[i].selected = !this.slides[i].selected;
+	},
+
 	removeSlide: function(i) {
 		this.slides.splice(i, 1);
 	},

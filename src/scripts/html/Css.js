@@ -8,5 +8,16 @@ module.exports = {
 			Util.curry1_1(Util.camelize, '-'),
 			Util.mapFromString(';', ':', cssText)
 		);
+	},
+
+	toClassString: function(obj) {
+		var str = '';
+		for (var key in obj) {
+			if (obj[key]) {
+				str += key + ' ';
+			}
+		}
+
+		return str;
 	}
 };
