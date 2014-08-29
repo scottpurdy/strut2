@@ -1,6 +1,5 @@
 'use strict';
 
-var Events = require('events/Events');
 var ComponentFactory = require('./SlideComponentFactory');
 var Css = require('html/Css');
 var _ = require('lodash');
@@ -22,10 +21,10 @@ function Slide(slideNode) {
 	}
 }
 
-var proto = Slide.prototype = Object.create(Events);
-
-Slide.create = function(rawContents) {
-	return new Slide(rawContents);
-}
+Slide.prototype = {
+	addComponent: function(type) {
+		this.components.push(ComponentFactory(type));
+	}
+};
 
 module.exports = Slide;

@@ -2,16 +2,9 @@ var Util = require('Util');
 var PureSlide = require('components/deck/Slide');
 
 function Slide(appSlideState, pureSlide) {
-	Util.invariant(Util.allDefined() || Util.noneDefined(), 'Inconsistent state');
 	this.pureSlide = pureSlide || new PureSlide();
 
-	if (!appSlideState) {
-		this.components = [];
-	} else {
-		this.components = Util.map2(function(appComponentState, pureComponent) {
-			return new Component(appComponentState, pureComponent);
-		}, appSlideState.components, pureSlide.components);
-	}
+	_.extend(this, appSlideState);
 }
 
 Slide.prototype = {
@@ -20,7 +13,15 @@ Slide.prototype = {
 	},
 
 	getSelectedComponents: function() {
-		return this.components.filter(Util.isSelected);
+		
+	},
+
+	selectComponent: function(comp) {
+
+	},
+
+	addComponent: function(type) {
+		this.pureSlide.addComponent(type);
 	}
 };
 

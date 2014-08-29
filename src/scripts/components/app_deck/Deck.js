@@ -17,17 +17,27 @@ Deck.prototype = {
 		return this.slides.filter(Util.isSelected);
 	},
 
+	getSelectedSlide: function() {
+		return this.slides[this.mostRecentlySelectedSlide];
+	},
+
 	addSlideLast: function() {
 		this.slides.push(new Slide());
 		return this.slides.length - 1;
 	},
 
 	setSelectedSlide: function(i, selected) {
+		if (selected) {
+			this.mostRecentlySelectedSlide = i;
+		}
 		this.slides[i].selected = selected;
 	},
 
 	toggleSelectedSlide: function(i) {
 		this.slides[i].selected = !this.slides[i].selected;
+		if (this.slides[i].selected) {
+			this.mostRecentlySelectedSlide = i;
+		}
 	},
 
 	removeSlide: function(i) {
@@ -36,6 +46,13 @@ Deck.prototype = {
 
 	popSlide: function() {
 		this.slides.pop();
+	},
+
+	addComponent: function(type) {
+		var slide = this.getSelectedSlide();
+		if (slide) {
+			slide.addComponent(type);
+		}
 	},
 
 	shiftSlide: function() {

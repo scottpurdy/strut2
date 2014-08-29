@@ -11,6 +11,7 @@ var ComponentArea = React.createClass({
 		return (
 			<div className="strt-header-component-area">
 				<ButtonGroup
+					onClick={this.props.onAddComponent}
 					interface="strut.header.component_area.component"
 					btnClassName="btn-default"
 				/>

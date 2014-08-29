@@ -1,6 +1,12 @@
 var lang = require('i18n/lang');
 var keyboard = require('device/Keyboard');
 
+function notifyType(props) {
+	if (props.onClick) {
+		props.onClick(this.type);
+	}
+}
+
 module.exports = {
 	init: function(registry) {
 		registry.register({
@@ -12,9 +18,8 @@ module.exports = {
 				icon: 'glyphicon-text-width'
 			}
 		}, {
-			call: function() {
-
-			}
+			type: 'text',
+			call: notifyType
 		});
 
 		registry.register({
@@ -26,9 +31,8 @@ module.exports = {
 				icon: 'glyphicon-picture'
 			}
 		}, {
-			call: function() {
-
-			}
+			type: 'img',
+			call: notifyType
 		});
 
 		registry.register({
@@ -40,9 +44,8 @@ module.exports = {
 				icon: 'glyphicon-film'
 			}
 		}, {
-			call: function() {
-
-			}
+			type: 'video',
+			call: notifyType
 		});
 
 		registry.register({
@@ -54,9 +57,8 @@ module.exports = {
 				icon: 'glyphicon-globe'
 			}
 		}, {
-			call: function() {
-
-			}
+			type: 'iframe',
+			call: notifyType
 		});
 
 		registry.register({
@@ -68,9 +70,8 @@ module.exports = {
 				icon: 'glyphicon-star'
 			}
 		}, {
-			call: function() {
-
-			}
+			type: 'shape',
+			call: notifyType
 		});
 	}
 };

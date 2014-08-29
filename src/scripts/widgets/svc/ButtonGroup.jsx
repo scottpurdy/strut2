@@ -14,10 +14,12 @@ var ButtonGroup = React.createClass({
 	},
 
 	render: function() {
+		var self = this;
 		var children = this._tracker.map(function(se) {
 			return (
 				<button
 					key={se.service.__registryIdentifier}
+					onClick={function(e) {se.service.call(self.props); e.stopPropagation();}}
 					className={"btn " + this.props.btnClassName}>
 					<span className={"glyphicon " + se.meta.icon}>
 					</span>

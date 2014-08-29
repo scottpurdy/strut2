@@ -4,7 +4,7 @@
 'use strict';
 
 var React = require('react/addons');
-var Slide = require('./Slide.jsx');
+var Slide = require('./WellSlide.jsx');
 
 require('components/SlideWell.css')
 

@@ -34,12 +34,21 @@ var EditorSlide = React.createClass({
 		}
 	},
 
+	onAddComponent: function(componentType) {
+		this.state.deck.addComponent(componentType);
+		this.setState({
+			deck: this.state.deck
+		});
+	},
+
 	render: function() {
 		return this.transferPropsTo(
 			<div>
 				<Header>
 					<LogoButton />
-					<ComponentButtonArea />
+					<ComponentButtonArea
+						onAddComponent={this.onAddComponent}
+					/>
 				</Header>
 				<div className="container-fluid">
 					<SlideWell

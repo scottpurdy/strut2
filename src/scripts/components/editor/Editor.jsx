@@ -5,8 +5,8 @@
 
 var React = require('react/addons');
 
-var SlideEditor = require('./Slide.jsx');
-var TransitionEditor = require('./Transition.jsx');
+var SlideEditor = require('./SlideEditor.jsx');
+var TransitionEditor = require('./TransitionEditor.jsx');
 var PureDeck = require('components/deck/Deck');
 var AppDeck = require('components/app_deck/Deck');
 var Deck = require('components/deck/Deck');
@@ -32,7 +32,8 @@ var Editor = React.createClass({
 		var CurrentView = subViews[this.state.view];
 		return this.transferPropsTo(
 			<div className="strt-editor">
-				<CurrentView deck={this.state.deck} />
+				<CurrentView
+					deck={this.state.deck} />
 			</div>
 		);
 	}
