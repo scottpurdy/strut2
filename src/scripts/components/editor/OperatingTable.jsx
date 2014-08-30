@@ -6,7 +6,9 @@
 var React = require('react/addons');
 var Geometry = require('math/Geometry');
 var _ = require('lodash');
-
+var ComponentViewFactory = 
+	require('components/app_deck/views/ComponentViewFactory');
+	
 require('components/OperatingTable.css');
 
 var OperatingTable = React.createClass({
@@ -61,10 +63,22 @@ var OperatingTable = React.createClass({
 		window.removeEventListener('resize', this._resized);
 	},
 
+	renderComponent: function(component) {
+		var node = ComponentViewFactory(component);
+		return <node model={component} />
+	},
+
 	render: function() {
+		var slide = this.props.deck.getSelectedSlide();
+		var components = null;
+		if (slide) {
+			components = slide.components.map(this.renderComponent);
+		}
+
 		return (
 			<div className="strt-operating-table" ref="rootEl">
 				<div className="strt-ot-slide" style={this.state.otsStyle}>
+					{components}
 				</div>
 			</div>
 		);

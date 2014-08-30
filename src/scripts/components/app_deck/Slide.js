@@ -12,6 +12,10 @@ Slide.prototype = {
 		return this.pureSlide.id;
 	},
 
+	get components() {
+		return this.pureSlide.components;
+	},
+
 	getSelectedComponents: function() {
 		
 	},
