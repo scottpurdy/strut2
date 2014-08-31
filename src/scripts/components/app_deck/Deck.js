@@ -8,6 +8,7 @@ function Deck(appDeckState, pureDeck) {
 	}, appDeckState.slides, pureDeck.slides);
 }
 
+// TODO: every mutation done here needs to generate an undo/redo action.
 Deck.prototype = {
 	get config() {
 		return this.pureDeck.config;
