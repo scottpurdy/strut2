@@ -21,6 +21,7 @@ var Editor = React.createClass({
 	getInitialState: function() {
 		var appDeck = new AppDeck({slides: []}, new Deck());
 		appDeck.addSlide();
+		appDeck.setSelectedSlide(0, true);
 
 		return {
 			view: 'slide',

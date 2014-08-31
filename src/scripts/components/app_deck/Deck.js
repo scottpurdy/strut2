@@ -48,10 +48,10 @@ Deck.prototype = {
 		this.slides.pop();
 	},
 
-	addComponent: function(type) {
+	addComponent: function(type, options) {
 		var slide = this.getSelectedSlide();
 		if (slide) {
-			slide.addComponent(type);
+			slide.addComponent(type, options);
 		}
 	},
 

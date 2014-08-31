@@ -34,8 +34,8 @@ var EditorSlide = React.createClass({
 		}
 	},
 
-	onAddComponent: function(componentType) {
-		this.state.deck.addComponent(componentType);
+	onAddComponent: function(componentType, options) {
+		this.state.deck.addComponent(componentType, options);
 		this.setState({
 			deck: this.state.deck
 		});

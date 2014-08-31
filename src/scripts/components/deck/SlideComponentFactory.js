@@ -10,9 +10,10 @@ var constructors = {
 // so long as we keep the node type with us.
 // and we use the node type to switch controls and such.
 
-module.exports = function(node) {
+// TODO: generate default content for completely new nodes?
+module.exports = function(node, options) {
 	var name = node.nodeName || node;
 	var constructor = constructors[name] || constructors.other;
 
-	return new constructor(node);
+	return new constructor(node, options);
 }

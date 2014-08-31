@@ -22,8 +22,8 @@ function Slide(slideNode) {
 }
 
 Slide.prototype = {
-	addComponent: function(type) {
-		this.components.push(ComponentFactory(type));
+	addComponent: function(type, options) {
+		this.components.push(ComponentFactory(type, options));
 	}
 };
 

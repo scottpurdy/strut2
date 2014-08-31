@@ -19,7 +19,11 @@ module.exports = {
 			}
 		}, {
 			type: 'text',
-			call: notifyType
+			call: function(props) {
+				if (props.onClick) {
+					props.onClick(this.type, {content: 'Text'});
+				}
+			}
 		});
 
 		registry.register({

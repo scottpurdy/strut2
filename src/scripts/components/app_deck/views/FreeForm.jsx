@@ -6,8 +6,9 @@
 var React = require('react/addons');
 
 var FreeForm = React.createClass({
-	render: function() {
-		return <div>Yo</div>;
+	render: function() {	
+		var model = this.props.model;
+		return <div dangerouslySetInnerHTML={{__html: model.content}}></div>;
 	}
 });
 

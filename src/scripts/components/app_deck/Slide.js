@@ -24,8 +24,8 @@ Slide.prototype = {
 
 	},
 
-	addComponent: function(type) {
-		this.pureSlide.addComponent(type);
+	addComponent: function(type, options) {
+		this.pureSlide.addComponent(type, options);
 	}
 };
 
