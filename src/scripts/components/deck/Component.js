@@ -2,17 +2,19 @@
 
 var Css = require('html/Css');
 var Events = require('events/Events');
+var _ = require('lodash');
 
 var key = 0;
 function Component(node, options) {
-	// constructing based on just a type
 	this.key = ++key;
 	if (typeof node === 'string') {
 		options = options || {};
 		this.nodeName = node;
-		this.content = options.content || '';
-		this.style = options.style || {};
-		this.classes = options.classes || [];
+		this.content = '';
+		this.style = {};
+		this.classes = [];
+
+		_.extend(this, options);
 	} else { // have a node with content
 		this.nodeName = node.nodeName;
 		this.content = node.innerHTML;
